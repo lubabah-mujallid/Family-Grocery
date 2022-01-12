@@ -10,11 +10,16 @@
 		7ABAB4206BF42DCC1F61C0D3 /* Pods_Family_Grocery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECF6DDAA8FD04A64D8D34D9 /* Pods_Family_Grocery.framework */; };
 		C3602E7D278EB70000EFFA32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E7C278EB70000EFFA32 /* AppDelegate.swift */; };
 		C3602E7F278EB70000EFFA32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E7E278EB70000EFFA32 /* SceneDelegate.swift */; };
-		C3602E81278EB70000EFFA32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E80278EB70000EFFA32 /* ViewController.swift */; };
+		C3602E81278EB70000EFFA32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E80278EB70000EFFA32 /* LoginViewController.swift */; };
 		C3602E84278EB70000EFFA32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3602E82278EB70000EFFA32 /* Main.storyboard */; };
 		C3602E86278EB70300EFFA32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3602E85278EB70300EFFA32 /* Assets.xcassets */; };
 		C3602E89278EB70300EFFA32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3602E87278EB70300EFFA32 /* LaunchScreen.storyboard */; };
 		C3602E98278EF1B000EFFA32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3602E97278EF1B000EFFA32 /* GoogleService-Info.plist */; };
+		C3602E9A278EF7E800EFFA32 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E99278EF7E800EFFA32 /* RegisterViewController.swift */; };
+		C3602E9C278EF80000EFFA32 /* GroceryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E9B278EF80000EFFA32 /* GroceryListViewController.swift */; };
+		C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E9D278EF82400EFFA32 /* ProfileViewController.swift */; };
+		C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E9F278F065300EFFA32 /* KeyboardExtension.swift */; };
+		C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +29,17 @@
 		C3602E79278EB70000EFFA32 /* Family Grocery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Grocery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3602E7C278EB70000EFFA32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3602E7E278EB70000EFFA32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C3602E80278EB70000EFFA32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3602E80278EB70000EFFA32 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3602E83278EB70000EFFA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3602E85278EB70300EFFA32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3602E88278EB70300EFFA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3602E8A278EB70300EFFA32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3602E97278EF1B000EFFA32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3602E99278EF7E800EFFA32 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C3602E9B278EF80000EFFA32 /* GroceryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewController.swift; sourceTree = "<group>"; };
+		C3602E9D278EF82400EFFA32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C3602E9F278F065300EFFA32 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
+		C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,7 @@
 		C3602E7B278EB70000EFFA32 /* Family Grocery */ = {
 			isa = PBXGroup;
 			children = (
+				C3602EA1278F5D0F00EFFA32 /* Extensions */,
 				C3602E97278EF1B000EFFA32 /* GoogleService-Info.plist */,
 				C3602E8A278EB70300EFFA32 /* Info.plist */,
 				C3602E93278EB79800EFFA32 /* Controllers */,
@@ -113,9 +124,21 @@
 		C3602E93278EB79800EFFA32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C3602E80278EB70000EFFA32 /* ViewController.swift */,
+				C3602E80278EB70000EFFA32 /* LoginViewController.swift */,
+				C3602E99278EF7E800EFFA32 /* RegisterViewController.swift */,
+				C3602E9B278EF80000EFFA32 /* GroceryListViewController.swift */,
+				C3602E9D278EF82400EFFA32 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3602EA1278F5D0F00EFFA32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3602E9F278F065300EFFA32 /* KeyboardExtension.swift */,
+				C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3602E81278EB70000EFFA32 /* ViewController.swift in Sources */,
+				C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */,
+				C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */,
+				C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */,
+				C3602E9C278EF80000EFFA32 /* GroceryListViewController.swift in Sources */,
+				C3602E81278EB70000EFFA32 /* LoginViewController.swift in Sources */,
 				C3602E7D278EB70000EFFA32 /* AppDelegate.swift in Sources */,
 				C3602E7F278EB70000EFFA32 /* SceneDelegate.swift in Sources */,
+				C3602E9A278EF7E800EFFA32 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
