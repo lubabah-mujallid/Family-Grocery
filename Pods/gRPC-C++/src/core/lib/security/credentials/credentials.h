@@ -202,10 +202,10 @@ void grpc_test_only_control_plane_credentials_force_init();
 
 /* --- grpc_credentials_mdelem_array. --- */
 
-typedef struct {
+struct grpc_credentials_mdelem_array {
   grpc_mdelem* md = nullptr;
   size_t size = 0;
-} grpc_credentials_mdelem_array;
+};
 
 /// Takes a new ref to \a md.
 void grpc_credentials_mdelem_array_add(grpc_credentials_mdelem_array* list,
