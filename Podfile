@@ -6,7 +6,9 @@ target 'Family Grocery' do
   use_frameworks!
 
   # Pods for Family Grocery
+pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
 
 end

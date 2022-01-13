@@ -20,6 +20,9 @@
 		C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E9D278EF82400EFFA32 /* ProfileViewController.swift */; };
 		C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602E9F278F065300EFFA32 /* KeyboardExtension.swift */; };
 		C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */; };
+		C3602EA5278F62B800EFFA32 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA4278F62B800EFFA32 /* UserTableViewCell.swift */; };
+		C3602EA8278F62F000EFFA32 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA7278F62F000EFFA32 /* GroceryItemTableViewCell.swift */; };
+		C3602EAB2790546A00EFFA32 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		C3602E9D278EF82400EFFA32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C3602E9F278F065300EFFA32 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		C3602EA4278F62B800EFFA32 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = "Family Grocery/Controllers/CustomCells/UserTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		C3602EA7278F62F000EFFA32 /* GroceryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewCell.swift; sourceTree = "<group>"; };
+		C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		C3602E7B278EB70000EFFA32 /* Family Grocery */ = {
 			isa = PBXGroup;
 			children = (
+				C3602EA92790544900EFFA32 /* Models */,
 				C3602EA1278F5D0F00EFFA32 /* Extensions */,
 				C3602E97278EF1B000EFFA32 /* GoogleService-Info.plist */,
 				C3602E8A278EB70300EFFA32 /* Info.plist */,
@@ -124,6 +131,7 @@
 		C3602E93278EB79800EFFA32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3602EA6278F62CF00EFFA32 /* CustomCells */,
 				C3602E80278EB70000EFFA32 /* LoginViewController.swift */,
 				C3602E99278EF7E800EFFA32 /* RegisterViewController.swift */,
 				C3602E9B278EF80000EFFA32 /* GroceryListViewController.swift */,
@@ -139,6 +147,23 @@
 				C3602EA2278F5D4F00EFFA32 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3602EA6278F62CF00EFFA32 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				C3602EA4278F62B800EFFA32 /* UserTableViewCell.swift */,
+				C3602EA7278F62F000EFFA32 /* GroceryItemTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		C3602EA92790544900EFFA32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3602EA8278F62F000EFFA32 /* GroceryItemTableViewCell.swift in Sources */,
+				C3602EAB2790546A00EFFA32 /* DatabaseManager.swift in Sources */,
 				C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */,
+				C3602EA5278F62B800EFFA32 /* UserTableViewCell.swift in Sources */,
 				C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */,
 				C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */,
 				C3602E9C278EF80000EFFA32 /* GroceryListViewController.swift in Sources */,
