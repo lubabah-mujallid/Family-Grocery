@@ -9,6 +9,7 @@ class GroceryListViewController: UIViewController { //contains all UI elemnts ou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //DatabaseManger.shared.test()
         tableViewGroceries.delegate = self
         tableViewGroceries.dataSource = self
     }
@@ -23,12 +24,9 @@ class GroceryListViewController: UIViewController { //contains all UI elemnts ou
     }
     
     @IBAction func addItemBtnPressed(_ sender: UIButton) {
+        
     }
 }
-
-//extension GroceryListViewController { //this contains all functions related to view appearing, loading, ect....
-//
-//}
 
 
 extension GroceryListViewController: UITableViewDelegate, UITableViewDataSource { //this deals with everything related to table views

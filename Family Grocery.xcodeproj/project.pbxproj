@@ -23,6 +23,8 @@
 		C3602EA5278F62B800EFFA32 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA4278F62B800EFFA32 /* UserTableViewCell.swift */; };
 		C3602EA8278F62F000EFFA32 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EA7278F62F000EFFA32 /* GroceryItemTableViewCell.swift */; };
 		C3602EAB2790546A00EFFA32 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */; };
+		C3602EAD27905FDC00EFFA32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAC27905FDC00EFFA32 /* User.swift */; };
+		C3602EAF27905FFA00EFFA32 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAE27905FFA00EFFA32 /* GroceryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C3602EA4278F62B800EFFA32 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = "Family Grocery/Controllers/CustomCells/UserTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		C3602EA7278F62F000EFFA32 /* GroceryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewCell.swift; sourceTree = "<group>"; };
 		C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C3602EAC27905FDC00EFFA32 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3602EAE27905FFA00EFFA32 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		C3602E90278EB74B00EFFA32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */,
 				C3602E7C278EB70000EFFA32 /* AppDelegate.swift */,
 				C3602E7E278EB70000EFFA32 /* SceneDelegate.swift */,
 			);
@@ -161,7 +166,8 @@
 		C3602EA92790544900EFFA32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */,
+				C3602EAC27905FDC00EFFA32 /* User.swift */,
+				C3602EAE27905FFA00EFFA32 /* GroceryItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,12 +289,14 @@
 			files = (
 				C3602EA8278F62F000EFFA32 /* GroceryItemTableViewCell.swift in Sources */,
 				C3602EAB2790546A00EFFA32 /* DatabaseManager.swift in Sources */,
+				C3602EAF27905FFA00EFFA32 /* GroceryItem.swift in Sources */,
 				C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */,
 				C3602EA5278F62B800EFFA32 /* UserTableViewCell.swift in Sources */,
 				C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */,
 				C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */,
 				C3602E9C278EF80000EFFA32 /* GroceryListViewController.swift in Sources */,
 				C3602E81278EB70000EFFA32 /* LoginViewController.swift in Sources */,
+				C3602EAD27905FDC00EFFA32 /* User.swift in Sources */,
 				C3602E7D278EB70000EFFA32 /* AppDelegate.swift in Sources */,
 				C3602E7F278EB70000EFFA32 /* SceneDelegate.swift in Sources */,
 				C3602E9A278EF7E800EFFA32 /* RegisterViewController.swift in Sources */,
