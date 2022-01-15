@@ -8,13 +8,15 @@ class GroceryItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func setupCell(item: GroceryItem) {
+        labelGroceryItems[0].text = item.name
+        labelGroceryItems[1].text = item.username
     }
 
 }

@@ -25,6 +25,7 @@
 		C3602EAB2790546A00EFFA32 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */; };
 		C3602EAD27905FDC00EFFA32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAC27905FDC00EFFA32 /* User.swift */; };
 		C3602EAF27905FFA00EFFA32 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EAE27905FFA00EFFA32 /* GroceryItem.swift */; };
+		C3602EB12790724A00EFFA32 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3602EB02790724A00EFFA32 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C3602EAC27905FDC00EFFA32 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3602EAE27905FFA00EFFA32 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
+		C3602EB02790724A00EFFA32 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				C3602EA92790544900EFFA32 /* Models */,
-				C3602EA1278F5D0F00EFFA32 /* Extensions */,
 				C3602E97278EF1B000EFFA32 /* GoogleService-Info.plist */,
 				C3602E8A278EB70300EFFA32 /* Info.plist */,
 				C3602E93278EB79800EFFA32 /* Controllers */,
@@ -116,9 +117,11 @@
 		C3602E90278EB74B00EFFA32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3602EA1278F5D0F00EFFA32 /* Extensions */,
 				C3602EAA2790546A00EFFA32 /* DatabaseManager.swift */,
 				C3602E7C278EB70000EFFA32 /* AppDelegate.swift */,
 				C3602E7E278EB70000EFFA32 /* SceneDelegate.swift */,
+				C3602EB02790724A00EFFA32 /* Alert.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				C3602EA3278F5D4F00EFFA32 /* UIViewControllerExtensions.swift in Sources */,
 				C3602EA5278F62B800EFFA32 /* UserTableViewCell.swift in Sources */,
 				C3602E9E278EF82400EFFA32 /* ProfileViewController.swift in Sources */,
+				C3602EB12790724A00EFFA32 /* Alert.swift in Sources */,
 				C3602EA0278F065300EFFA32 /* KeyboardExtension.swift in Sources */,
 				C3602E9C278EF80000EFFA32 /* GroceryListViewController.swift in Sources */,
 				C3602E81278EB70000EFFA32 /* LoginViewController.swift in Sources */,
