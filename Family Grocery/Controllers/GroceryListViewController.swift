@@ -69,15 +69,33 @@ extension GroceryListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.setupCell(item: groceryList[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     
     // TODO : add in swipe actions to delete and edit and complete
 //    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //        return UISwipeActionsConfiguration(actions: [UIContextualAction()])
 //    }
     
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, actionPerformed: @escaping (Bool)->()) in
+            
+            let alert = UIAlertController(title: "Delete Grocery Item", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alertAction in actionPerformed(false)}))
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { alertAction in
+                actionPerformed(true)
+                //delete from the database
+                DatabaseManger.shared.deleteGrocery(item: self.groceryList[indexPath.row])
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        //add a new action called edit
+//        delete.image = trash
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
 
 }
 

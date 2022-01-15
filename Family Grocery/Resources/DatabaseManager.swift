@@ -23,6 +23,10 @@ extension DatabaseManger {
              "isDone": item.isDone]
         )}
     
+    func deleteGrocery(item: GroceryItem){
+        database.child("Grocery/\(item.name.capitalized)").removeValue()
+    }
+    
     func groceryItemExists(with itemName: String, completion: @escaping ((Bool)->(Void))) {
         //item name make sure it is safe
         database.child("Grocery/\(itemName.capitalized)").observeSingleEvent(of: .value) { snapshot in
