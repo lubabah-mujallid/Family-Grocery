@@ -3,6 +3,7 @@ import UIKit
 //add keyboard return btn delegate
 class GroceryListViewController: UIViewController {
     
+    
     @IBOutlet var textFieldNewItem : UITextField?
     @IBOutlet weak var tableViewGroceries: UITableView?
     
@@ -12,6 +13,13 @@ class GroceryListViewController: UIViewController {
         super.viewDidLoad()
         tableViewGroceries?.delegate = self
         tableViewGroceries?.dataSource = self
+        tableViewGroceries?.allowsSelection = true
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +32,7 @@ class GroceryListViewController: UIViewController {
             print(self.groceryList)
             self.tableViewGroceries?.reloadData()
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,26 +67,21 @@ class GroceryListViewController: UIViewController {
 
 
 extension GroceryListViewController: UITableViewDelegate, UITableViewDataSource { //this deals with everything related to table views
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groceryList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as! GroceryItemTableViewCell
         //set up cell
         cell.setupCell(item: groceryList[indexPath.row])
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    
-    
-    // TODO : add in swipe actions to delete and edit and complete
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        return UISwipeActionsConfiguration(actions: [UIContextualAction()])
-//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, actionPerformed: @escaping (Bool)->()) in
@@ -86,16 +90,52 @@ extension GroceryListViewController: UITableViewDelegate, UITableViewDataSource 
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alertAction in actionPerformed(false)}))
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { alertAction in
                 actionPerformed(true)
-                //delete from the database
                 DatabaseManger.shared.deleteGrocery(item: self.groceryList[indexPath.row])
             }))
             self.present(alert, animated: true, completion: nil)
         }
         
-        //add a new action called edit
-//        delete.image = trash
-        return UISwipeActionsConfiguration(actions: [delete])
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, actionPerformed: @escaping (Bool)->()) in
+            let item = self.groceryList[indexPath.row]
+            let alert = UIAlertController(title: nil, message: "Change the item name", preferredStyle: .alert)
+            alert.addTextField { UITextField -> Void in
+                UITextField.text = item.name
+            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alertAction in actionPerformed(false)}))
+            alert.addAction(UIAlertAction(title: "change", style: .default, handler: { alertAction in
+                if let textField = alert.textFields?[0], !textField.text!.isEmpty{
+                    print("the user entered: \( textField.text!)")
+                    DatabaseManger.shared.updateGroceryItemName(oldItem: item, newItemName: textField.text!)
+                    actionPerformed(true)}
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        edit.backgroundColor = .systemTeal
+        
+        return UISwipeActionsConfiguration(actions: [delete, edit])
     }
-
+    
 }
 
+extension GroceryListViewController: GroceryTableViewCellDelegate {
+    
+    
+    func checkboxTapped(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            var item = groceryList[indexPath.row]
+            item.isDone.toggle()
+            let cell = tableViewGroceries?.cellForRow(at: indexPath) as! GroceryItemTableViewCell
+            cell.checkImageView(item.isDone)
+            DatabaseManger.shared.updateGroceryStatus(item: item)
+        }
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: tableViewGroceries)
+        if let indexPath: IndexPath = tableViewGroceries?.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
+}

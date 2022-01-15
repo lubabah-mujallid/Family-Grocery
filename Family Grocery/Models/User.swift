@@ -2,8 +2,8 @@
 import Foundation
 
 struct User {
-    let name: String
-    let email: String
+    var name: String
+    var email: String
     
     // create a computed property safe email
     func getSafeEmail() -> String {

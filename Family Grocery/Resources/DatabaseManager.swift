@@ -27,6 +27,16 @@ extension DatabaseManger {
         database.child("Grocery/\(item.name.capitalized)").removeValue()
     }
     
+    func updateGroceryStatus(item: GroceryItem){
+        database.child("Grocery/\(item.name.capitalized)").updateChildValues(
+            ["isDone" : item.isDone])
+    }
+    
+    func updateGroceryItemName(oldItem: GroceryItem, newItemName: String) {
+        database.child("Grocery/\(oldItem.name.capitalized)").removeValue()
+        addGrocery(item: GroceryItem(name: newItemName, username: oldItem.username, isDone: oldItem.isDone))
+    }
+    
     func groceryItemExists(with itemName: String, completion: @escaping ((Bool)->(Void))) {
         //item name make sure it is safe
         database.child("Grocery/\(itemName.capitalized)").observeSingleEvent(of: .value) { snapshot in
@@ -40,7 +50,7 @@ extension DatabaseManger {
     }
     
     func getGroceryList(completion: @escaping ([GroceryItem]) -> Void) {
-        database.child("Grocery").observe(.value) { snapshot in
+        database.child("Grocery").queryOrdered(byChild: "isDone").observe(.value) { snapshot in
             print("snapshot values: \(String(describing: snapshot.value))")
             var list: [GroceryItem] = []
             for child in snapshot.children {
@@ -74,6 +84,10 @@ extension DatabaseManger {
             }
             completion(true) // the caller knows the email exists already
         }
+    }
+    
+    public func insertUser(with user: User){
+        database.child("Users/\(user.name)").setValue(["email":user.getSafeEmail()])
     }
 }
 
