@@ -7,9 +7,14 @@ final class DatabaseManger {
     
     static let shared = DatabaseManger()
     private let database = Database.database().reference()
+    private let onlineUserDatabase = Database.database().reference(withPath: "Online")
     
-    func removeObservers() {
+    func removeDataBaseObservers() {
         database.removeAllObservers()
+    }
+    
+    func removeUserDatabaseObserever() {
+        onlineUserDatabase.removeAllObservers()
     }
     
 }
@@ -71,11 +76,28 @@ extension DatabaseManger {
 
 // MARK:- users management
 extension DatabaseManger {
+    func getOnlineUsers(completion: @escaping ([User]) -> Void) {
+        onlineUserDatabase.observe(.value) { snapshot in
+            print("snapshot values: \(String(describing: snapshot.value))")
+            var list: [User] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let value = snapshot.value as? String {
+                    let name = value
+                    let isOnline = true
+                    let user = User(name: name, email: "email", isOnline: isOnline)
+                    print(user)
+                    list.append(user)
+                }
+            }
+            completion(list)
+        }
+    }
+    
+    
     public func userExists(with email:String, completion: @escaping ((Bool) -> Void)) {
         // will return true if the user email does exist already
-        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
-        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        database.child(safeEmail).observeSingleEvent(of: .value) {
+        database.child("Users/\(email)").observeSingleEvent(of: .value) {
             snapshot in
             guard snapshot.value as? String != nil else {
                 // let's create the account
@@ -87,7 +109,18 @@ extension DatabaseManger {
     }
     
     public func insertUser(with user: User){
-        database.child("Users/\(user.name)").setValue(["email":user.getSafeEmail()])
+        database.child("Users/\(user.getSafeEmail())").setValue(
+            ["username":user.name, "isOnline": user.isOnline])
+    }
+    
+    func setCurrentUserOnline(safeEmail: String, id: String) {
+            let currentUser = self.onlineUserDatabase.child(id)
+            currentUser.setValue(safeEmail)
+            currentUser.onDisconnectRemoveValue()
+    }
+    
+    func removeUserOnline(id: String) {
+        onlineUserDatabase.child(id).removeValue()
     }
 }
 

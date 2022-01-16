@@ -1,4 +1,4 @@
-
+import FirebaseAuth
 import UIKit
 //add keyboard return btn delegate
 class GroceryListViewController: UIViewController {
@@ -13,7 +13,7 @@ class GroceryListViewController: UIViewController {
         super.viewDidLoad()
         tableViewGroceries?.delegate = self
         tableViewGroceries?.dataSource = self
-        tableViewGroceries?.allowsSelection = true
+        textFieldNewItem?.delegate = self
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -32,15 +32,17 @@ class GroceryListViewController: UIViewController {
             print(self.groceryList)
             self.tableViewGroceries?.reloadData()
         }
-        
+        let user = User(name: "", email: Auth.auth().currentUser!.email!)
+        DatabaseManger.shared.setCurrentUserOnline(safeEmail: user.getSafeEmail(), id: Auth.auth().currentUser!.uid)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.removeKeyboardObserver()
-        DatabaseManger.shared.removeObservers()
+        print("GVC: view will disappear")
+        DatabaseManger.shared.removeDataBaseObservers()
     }
     
-    @IBAction func addItemBtnPressed(_ sender: UIButton) {
+    @IBAction func addItemBtnPressed(_ sender: Any) {
         guard let itemName = textFieldNewItem?.text, !itemName.isEmpty else {
             print("the item text field is empty")
             Alert.error(message: "No Item Found!", self)
@@ -137,5 +139,13 @@ extension GroceryListViewController: GroceryTableViewCellDelegate {
             return indexPath
         }
         return nil
+    }
+}
+
+//this extensions is for the text fields return btns
+extension GroceryListViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addItemBtnPressed(textField)
+        return true
     }
 }

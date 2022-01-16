@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Family_Grocery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Family_Grocery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GX6-2Y-xZ7">
                                         <rect key="frame" x="0.0" y="0.0" width="291.33333333333331" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="continue"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="continue"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-8g-f5O">
                                         <rect key="frame" x="0.0" y="87" width="291.33333333333331" height="67"/>
@@ -42,7 +42,6 @@
                                         </state>
                                         <connections>
                                             <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TF9-uS-7Su"/>
-                                            <segue destination="fD8-fD-g8n" kind="show" id="cgp-QE-2Xc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,6 +89,7 @@
                     <connections>
                         <outletCollection property="textFieldLoginUser" destination="GX6-2Y-xZ7" collectionClass="NSMutableArray" id="iQ2-1a-CH2"/>
                         <outletCollection property="textFieldLoginUser" destination="dUu-8g-f5O" collectionClass="NSMutableArray" id="RWj-ql-Tq4"/>
+                        <segue destination="fD8-fD-g8n" kind="show" identifier="loginSegue" id="GYp-dR-SAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,12 +113,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJN-FQ-Ipc">
                                         <rect key="frame" x="0.0" y="0.0" width="291.33333333333331" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4p-YK-6fa">
                                         <rect key="frame" x="0.0" y="90" width="291.33333333333331" height="69.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKS-TK-IrV">
                                         <rect key="frame" x="0.0" y="179.66666666666669" width="291.33333333333331" height="69.666666666666686"/>
@@ -179,14 +179,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="kBl-Qt-HKI"/>
                     <connections>
-                        <outletCollection property="txtFieldRegisterUser" destination="HJN-FQ-Ipc" collectionClass="NSMutableArray" id="K2X-P7-eZm"/>
-                        <outletCollection property="txtFieldRegisterUser" destination="Y4p-YK-6fa" collectionClass="NSMutableArray" id="ZBy-m3-EcJ"/>
-                        <outletCollection property="txtFieldRegisterUser" destination="PKS-TK-IrV" collectionClass="NSMutableArray" id="fJe-B1-Y3c"/>
+                        <outletCollection property="textFieldRegisterUser" destination="HJN-FQ-Ipc" collectionClass="NSMutableArray" id="K2X-P7-eZm"/>
+                        <outletCollection property="textFieldRegisterUser" destination="Y4p-YK-6fa" collectionClass="NSMutableArray" id="ZBy-m3-EcJ"/>
+                        <outletCollection property="textFieldRegisterUser" destination="PKS-TK-IrV" collectionClass="NSMutableArray" id="fJe-B1-Y3c"/>
+                        <segue destination="fD8-fD-g8n" kind="show" identifier="registerSegue" id="omG-F9-vBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MB0-jJ-aRl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="-143"/>
+            <point key="canvasLocation" x="1361" y="-314"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="e4P-jA-AmP">
@@ -201,44 +202,46 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" id="bTx-u3-Yun" customClass="UserTableViewCell" customModule="Family_Grocery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="52.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bTx-u3-Yun" id="RTe-bg-anp">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="52.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-X4-UuH">
-                                                    <rect key="frame" x="30" y="15.999999999999998" width="368" height="20.333333333333329"/>
+                                                    <rect key="frame" x="23" y="11.000000000000002" width="382" height="20.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PX-uI-DQV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="256.66666666666669" height="20.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5sm-wz-Sya">
+                                                            <rect key="frame" x="0.0" y="0.0" width="296.33333333333331" height="20.666666666666668"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PX-uI-DQV">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="296.33333333333331" height="20.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="on/offline" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVX-H8-DZr">
-                                                            <rect key="frame" x="256.66666666666669" y="0.0" width="111.33333333333331" height="20.333333333333332"/>
+                                                            <rect key="frame" x="296.33333333333331" y="0.0" width="85.666666666666686" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="vld-BE-J1o"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7PX-uI-DQV" firstAttribute="width" secondItem="RTe-bg-anp" secondAttribute="width" multiplier="0.6" id="2JW-yI-AbG"/>
-                                                <constraint firstItem="hm8-X4-UuH" firstAttribute="leading" secondItem="RTe-bg-anp" secondAttribute="leadingMargin" constant="10" id="BAM-bV-Sjo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hm8-X4-UuH" secondAttribute="bottom" constant="5" id="G3j-85-lbb"/>
-                                                <constraint firstItem="hm8-X4-UuH" firstAttribute="top" secondItem="RTe-bg-anp" secondAttribute="topMargin" constant="5" id="OZH-nv-aej"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hm8-X4-UuH" secondAttribute="trailing" constant="10" id="lDT-4P-kyE"/>
+                                                <constraint firstItem="VVX-H8-DZr" firstAttribute="width" secondItem="RTe-bg-anp" secondAttribute="width" multiplier="0.2" id="8c0-8U-9fr"/>
+                                                <constraint firstItem="hm8-X4-UuH" firstAttribute="leading" secondItem="RTe-bg-anp" secondAttribute="leadingMargin" constant="3" id="BAM-bV-Sjo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hm8-X4-UuH" secondAttribute="bottom" id="G3j-85-lbb"/>
+                                                <constraint firstItem="hm8-X4-UuH" firstAttribute="top" secondItem="RTe-bg-anp" secondAttribute="topMargin" id="OZH-nv-aej"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hm8-X4-UuH" secondAttribute="trailing" constant="3" id="lDT-4P-kyE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outletCollection property="labelUser" destination="7PX-uI-DQV" collectionClass="NSMutableArray" id="HGv-0b-ypA"/>
-                                            <outletCollection property="labelUser" destination="VVX-H8-DZr" collectionClass="NSMutableArray" id="9hk-wM-r2m"/>
+                                            <outletCollection property="labelUser" destination="7PX-uI-DQV" collectionClass="NSMutableArray" id="YTB-Gg-3AG"/>
+                                            <outletCollection property="labelUser" destination="VVX-H8-DZr" collectionClass="NSMutableArray" id="fhI-LY-C7s"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -447,6 +450,9 @@
             <point key="canvasLocation" x="2031" y="262"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GYp-dR-SAf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="GroceryBlackOutline" width="512" height="512"/>
         <image name="GroceryWhite" width="512" height="512"/>

@@ -11,15 +11,20 @@ class UserTableViewCell: UITableViewCell {
 
     @IBOutlet var labelUser: [UILabel]!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setupCell(user: User) {
+        labelUser[0].text = user.name
+        checkUser(isOnline: user.isOnline)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func checkUser(isOnline: Bool) {
+        if isOnline {
+            labelUser[1].text = "online"
+            labelUser[1].textColor = .systemGreen
+        }
+        else {
+            labelUser[1].text = "offline"
+            labelUser[1].textColor = .lightGray
+        }
     }
-
+    
 }
