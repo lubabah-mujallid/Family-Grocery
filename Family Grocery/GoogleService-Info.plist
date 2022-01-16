@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>919354538860-pvoamtn9bu38e24q9go4ed9k1uem2n9i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.919354538860-pvoamtn9bu38e24q9go4ed9k1uem2n9i</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDV7jZQu5tQIM7MJdEmTbZaY0UvQAKn8zk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>919354538860</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>lubabah.Family-Grocery</string>
+	<key>PROJECT_ID</key>
+	<string>grocery-list-app-7b496</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grocery-list-app-7b496.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:919354538860:ios:ea85d45aed3954f2955149</string>
+</dict>
+</plist>
