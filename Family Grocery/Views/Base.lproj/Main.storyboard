@@ -189,7 +189,7 @@
             </objects>
             <point key="canvasLocation" x="1361" y="-314"/>
         </scene>
-        <!--Online Users-->
+        <!--Profile View Controller-->
         <scene sceneID="e4P-jA-AmP">
             <objects>
                 <viewController id="pme-PH-NW0" customClass="ProfileViewController" customModule="Family_Grocery" customModuleProvider="target" sceneMemberID="viewController">
@@ -256,7 +256,7 @@
                             <constraint firstItem="CCL-tb-W1c" firstAttribute="bottom" secondItem="oyQ-wf-ePu" secondAttribute="bottom" id="eau-5p-rqt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Online Users" id="3to-Fv-OwX">
+                    <navigationItem key="navigationItem" id="3to-Fv-OwX">
                         <barButtonItem key="rightBarButtonItem" title="Log out" style="done" id="V8X-uO-dDa">
                             <color key="tintColor" red="0.99689990282058716" green="0.02460489422082901" blue="0.036095462739467621" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -414,8 +414,8 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="a4J-UO-Esk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Woe-q6-zHY">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="108"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Woe-q6-zHY">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
